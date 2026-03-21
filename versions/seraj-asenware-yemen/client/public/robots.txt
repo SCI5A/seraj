@@ -1,0 +1,37 @@
+# Robots.txt for Al-Seraj Industrial Equipment
+# السراج للتجهيزات الصناعية
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Allow: /products
+Allow: /products/*
+Allow: /about
+Allow: /blog
+Allow: /contact
+Allow: /faq
+
+# Disallow private/admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Specific rules for Yandex
+User-agent: Yandexbot
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://seraj-yemen.com/sitemap.xml
