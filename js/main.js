@@ -1,6 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({ duration: 1000, once: true });
 
+    // Products Data
+    const products = [
+        { id: 1, name: 'كاشف دخان لاسلكي', nameEn: 'Wireless Smoke Detector', category: 'Fire Alarm', model: 'AW-D101', desc: 'كاشف دخان ذكي يعمل بالبطارية مع اتصال لاسلكي.' },
+        { id: 2, name: 'لوحة تحكم قابلة للعنونة', nameEn: 'Addressable Control Panel', category: 'Control Panels', model: 'AW-FP100', desc: 'لوحة تحكم متطورة تدعم حتى 250 نقطة عنونة.' },
+        { id: 3, name: 'كاشف حرارة خطي', nameEn: 'Linear Heat Detector', category: 'Specialized', model: 'AW-LHD', desc: 'مثالي للمستودعات والمناطق الصناعية الكبيرة.' },
+        { id: 4, name: 'كابل مقاوم للحريق', nameEn: 'Fire Resistant Cable', category: 'Accessories', model: 'FR-CABLE', desc: 'كابلات معتمدة تتحمل درجات الحرارة العالية.' },
+        { id: 5, name: 'جرس إنذار حريق', nameEn: 'Fire Alarm Bell', category: 'Notification', model: 'AW-BELL', desc: 'جرس عالي الصوت للتنبيه في حالات الطوارئ.' },
+        { id: 6, name: 'كاشف غاز ذكي', nameEn: 'Smart Gas Detector', category: 'Gas Detection', model: 'AW-GD', desc: 'كشف تسرب الغازات القابلة للاشتعال بدقة عالية.' }
+    ];
+
+    // Render Products
+    const productsGrid = document.getElementById('productsGrid');
+    if (productsGrid) {
+        productsGrid.innerHTML = products.map(p => `
+            <div class="stat-card" data-aos="fade-up">
+                <div style="color: var(--orange); font-size: 0.8rem; margin-bottom: 5px;">${p.model}</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 10px;">${p.name}</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">${p.desc}</p>
+            </div>
+        `).join('');
+    }
+
+    // Search Logic
+    const productSearch = document.getElementById('productSearch');
+    const searchResults = document.getElementById('searchResults');
+    if (productSearch && searchResults) {
+        productSearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            const filtered = products.filter(p => 
+                p.name.toLowerCase().includes(query) || 
+                p.nameEn.toLowerCase().includes(query) || 
+                p.model.toLowerCase().includes(query)
+            );
+            if (filtered.length > 0) {
+                searchResults.innerHTML = filtered.map(p => `
+                    <div class="search-item" onclick="scrollToSection('products')">
+                        <strong>${p.name}</strong> <small>(${p.model})</small>
+                    </div>
+                `).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+    }
+
+    window.scrollToSection = (id) => {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        if (searchResults) searchResults.style.display = 'none';
+        if (productSearch) productSearch.value = '';
+    };
+
     // Preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -28,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         en: {
             navLogo: 'Seraj <span>Equipment</span>',
-            home: 'Home', services: 'Services', tools: 'Tools', downloads: 'Downloads', contact: 'Contact',
+            home: 'Home', services: 'Services', products: 'Products', tools: 'Tools', downloads: 'Downloads', contact: 'Contact',
             heroTitle: 'Secure Your <span>Future</span> With Advanced Systems',
             heroDesc: 'Al-Seraj Industrial Equipment, Authorized Asenware Distributor in Yemen.',
             smartTools: 'Smart Tools',
@@ -41,14 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
             roomsLabel: 'Number of Rooms/Sections:',
             calcBtn: 'Calculate Needs',
             dlCenter: 'Download Center',
-            dlDesc: 'Download technical catalogs and international certifications.',
+            dlDesc: 'Download technical catalogs and international certifications for 2025.',
             footer: 'Al-Seraj Industrial Equipment. All Rights Reserved.',
             announcement: '📢 Special Offer: 15% discount on periodic maintenance for Asenware systems - Limited time!',
-            getStarted: 'Get Started'
+            getStarted: 'Explore Products'
         },
         ar: {
             navLogo: 'السراج <span>للتجهيزات</span>',
-            home: 'الرئيسية', services: 'خدماتنا', tools: 'الأدوات', downloads: 'التحميلات', contact: 'اتصل بنا',
+            home: 'الرئيسية', services: 'خدماتنا', products: 'المنتجات', tools: 'الأدوات', downloads: 'التحميلات', contact: 'اتصل بنا',
             heroTitle: 'نؤمن <span>مستقبلك</span> بأحدث أنظمة الحماية',
             heroDesc: 'السراج للتجهيزات الصناعية، الوكيل المعتمد لشركة Asenware العالمية في اليمن.',
             smartTools: 'الأدوات الذكية',
@@ -61,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
             roomsLabel: 'عدد الغرف/الأقسام:',
             calcBtn: 'احسب الاحتياج',
             dlCenter: 'مركز التحميلات',
-            dlDesc: 'حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا.',
+            dlDesc: 'حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا لعام 2025.',
             footer: 'السراج للتجهيزات الصناعية. جميع الحقوق محفوظة.',
             announcement: '📢 عرض خاص: خصم 15% على عقود الصيانة الدورية لأنظمة Asenware - لفترة محدودة!',
-            getStarted: 'ابدأ الآن'
+            getStarted: 'استعرض المنتجات'
         }
     };
 
@@ -87,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectors = {
             '.lang-home': t.home,
             '.lang-services': t.services,
+            '.lang-products': t.products,
             '.lang-tools': t.tools,
             '.lang-downloads': t.downloads,
             '.lang-contact': t.contact,
@@ -126,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!result) return;
         result.style.display = 'block';
         
-        if (input.startsWith('AS-2024')) {
+        if (input.startsWith('AS-2024') || input.startsWith('AS-2025')) {
             result.innerHTML = currentLang === 'ar' ? '✅ منتج أصلي معتمد من السراج' : '✅ Original Certified Seraj Product';
             result.style.background = 'rgba(37, 211, 102, 0.1)';
             result.style.border = '1px solid #25d366';
@@ -140,19 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // System Calculator Logic
     window.calculateSystem = function() {
         const area = document.getElementById('calcArea').value;
-        const rooms = document.getElementById('calcRooms').value;
+        const type = document.getElementById('buildingType').value;
         const result = document.getElementById('calcResult');
         if (!result) return;
         
-        if (!area || !rooms) return;
+        if (!area) return;
         
-        const detectors = Math.ceil(area / 50) + parseInt(rooms);
+        let multiplier = 50; // Residential
+        if (type === 'commercial') multiplier = 40;
+        if (type === 'industrial') multiplier = 30;
+
+        const detectors = Math.ceil(area / multiplier);
         const panels = 1;
         
         result.style.display = 'block';
         result.innerHTML = currentLang === 'ar' 
-            ? `📊 الاحتياج التقديري: <br> - كواشف: ${detectors} <br> - لوحة تحكم: ${panels}`
-            : `📊 Estimated Needs: <br> - Detectors: ${detectors} <br> - Control Panel: ${panels}`;
+            ? `📊 الاحتياج التقديري (${type === 'residential' ? 'سكني' : type === 'commercial' ? 'تجاري' : 'صناعي'}): <br> - كواشف: ${detectors} <br> - لوحة تحكم: ${panels}`
+            : `📊 Estimated Needs (${type}): <br> - Detectors: ${detectors} <br> - Control Panel: ${panels}`;
     };
 
     // Theme Toggle

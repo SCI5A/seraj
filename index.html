@@ -45,6 +45,7 @@
         <ul class="nav-links">
             <li><a href="#home" class="lang-home">الرئيسية</a></li>
             <li><a href="#services" class="lang-services">خدماتنا</a></li>
+            <li><a href="#products" class="lang-products">المنتجات</a></li>
             <li><a href="#tools" class="lang-tools">الأدوات</a></li>
             <li><a href="#downloads" class="lang-downloads">التحميلات</a></li>
             <li><a href="#contact" class="lang-contact">اتصل بنا</a></li>
@@ -61,17 +62,33 @@
         <div class="hero-content" data-aos="fade-left">
             <h1 id="heroTitle">نؤمن <span>مستقبلك</span> بأحدث أنظمة الحماية</h1>
             <p id="heroDesc">السراج للتجهيزات الصناعية، الوكيل المعتمد لشركة Asenware العالمية في اليمن.</p>
-            <div style="margin-top: 30px;">
-                <a href="#tools" class="btn btn-primary lang-get-started">ابدأ الآن</a>
+            <div class="search-container" style="margin-top: 30px; position: relative; max-width: 500px;">
+                <input type="text" id="productSearch" placeholder="ابحث عن منتج (مثال: كاشف دخان)..." class="checker-input" style="margin-bottom: 0; padding-right: 45px;">
+                <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                <div id="searchResults" class="search-results-dropdown"></div>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="#products" class="btn btn-primary lang-get-started">استعرض المنتجات</a>
             </div>
         </div>
         <div class="hero-visual" data-aos="zoom-in">
-            <img src="seraj-logo.png" alt="Seraj Logo">
+            <img src="seraj-logo.png" alt="Seraj Logo" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" style="background: var(--bg2);">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title"><span class="lang-products">أحدث المنتجات</span></h2>
+            <p>نقدم أحدث تقنيات Asenware العالمية لعام 2024-2025.</p>
+        </div>
+        <div class="stats-grid" id="productsGrid">
+            <!-- سيتم ملؤه عبر JS -->
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" style="background: var(--bg2);">
+    <section id="services">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title"><span class="lang-services">خدماتنا</span></h2>
             <p>نقدم حلولاً متكاملة في مجال الأمن والسلامة الصناعية.</p>
@@ -96,7 +113,7 @@
     </section>
 
     <!-- Interactive Tools -->
-    <section id="tools">
+    <section id="tools" style="background: var(--bg2);">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title"><span class="lang-smart-tools">الأدوات الذكية</span></h2>
             <p class="lang-tools-desc">أدوات تفاعلية لمساعدتك في تأمين منشأتك والتأكد من جودة منتجاتك.</p>
@@ -119,8 +136,12 @@
                     <input type="number" id="calcArea" class="calc-input" placeholder="مثال: 500">
                 </div>
                 <div class="calc-input-group">
-                    <label class="lang-rooms-label">عدد الغرف/الأقسام:</label>
-                    <input type="number" id="calcRooms" class="calc-input" placeholder="مثال: 10">
+                    <label>نوع المنشأة:</label>
+                    <select id="buildingType" class="calc-input" style="background: rgba(255,255,255,0.05); color: white;">
+                        <option value="residential">سكنية (مخاطر منخفضة)</option>
+                        <option value="commercial">تجارية (مخاطر متوسطة)</option>
+                        <option value="industrial">صناعية (مخاطر عالية)</option>
+                    </select>
                 </div>
                 <button class="btn btn-secondary w-full" onclick="calculateSystem()">احسب الاحتياج</button>
                 <div id="calcResult" class="checker-result" style="background: rgba(26, 95, 168, 0.1); border: 1px solid var(--blue);"></div>
@@ -129,38 +150,38 @@
     </section>
 
     <!-- Download Center -->
-    <section id="downloads" style="background: var(--bg2);">
+    <section id="downloads">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title"><span class="lang-dl-center">مركز التحميلات</span></h2>
-            <p class="lang-dl-desc">حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا.</p>
+            <p class="lang-dl-desc">حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا لعام 2025.</p>
         </div>
         <div class="downloads-grid">
-            <a href="#" class="download-item" data-aos="zoom-in">
+            <a href="https://www.asenwarefire.com/downloads/asenware-catalogue" target="_blank" class="download-item" data-aos="zoom-in">
                 <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
                 <div class="download-info">
-                    <h5>كتالوج Asenware 2024</h5>
-                    <p>PDF - 12MB</p>
+                    <h5>كتالوج Asenware 2025</h5>
+                    <p>PDF - أحدث إصدار</p>
                 </div>
             </a>
-            <a href="#" class="download-item" data-aos="zoom-in" data-aos-delay="100">
+            <a href="https://www.asenwarefire.com/collections/addressable-fire-alarm-control-system-lpcb-approved" target="_blank" class="download-item" data-aos="zoom-in" data-aos-delay="100">
                 <div class="download-icon"><i class="fas fa-certificate"></i></div>
                 <div class="download-info">
-                    <h5>شهادة LPCB الدولية</h5>
-                    <p>PDF - 2MB</p>
+                    <h5>شهادات LPCB المحدثة</h5>
+                    <p>اعتمادات دولية 2024</p>
                 </div>
             </a>
             <a href="#" class="download-item" data-aos="zoom-in" data-aos-delay="200">
                 <div class="download-icon"><i class="fas fa-book"></i></div>
                 <div class="download-info">
-                    <h5>دليل التركيب والصيانة</h5>
-                    <p>PDF - 5MB</p>
+                    <h5>دليل التركيب اليمني</h5>
+                    <p>PDF - خاص بوكالة السراج</p>
                 </div>
             </a>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="background: var(--bg2);">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title"><span>اتصل بنا</span></h2>
             <p>نحن هنا للإجابة على استفساراتكم وتلبية احتياجاتكم.</p>
@@ -169,15 +190,15 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <i class="fas fa-phone" style="color: var(--orange); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p>+967 777 777 777</p>
+                    <p dir="ltr">+967 777 777 777</p>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-envelope" style="color: var(--orange); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p>info@seraj-ye.com</p>
+                    <p>info@seraj-yemen.com</p>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-map-marker-alt" style="color: var(--orange); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <p>صنعاء، اليمن</p>
+                    <p>صنعاء، شارع الستين الشمالي</p>
                 </div>
             </div>
         </div>
@@ -189,7 +210,7 @@
     </a>
 
     <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--card-border);">
-        <p>© 2024 <span class="lang-footer">السراج للتجهيزات الصناعية. جميع الحقوق محفوظة.</span></p>
+        <p>© 2024-2026 <span class="lang-footer">السراج للتجهيزات الصناعية. جميع الحقوق محفوظة.</span></p>
     </footer>
 
     <!-- Scripts -->

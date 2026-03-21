@@ -172,3 +172,51 @@ section { padding: 100px 8%; }
 .btn-secondary:hover { background: var(--blue-light); transform: translateY(-2px); }
 
 .w-full { width: 100%; }
+
+/* ===== SEARCH RESULTS DROPDOWN ===== */
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.search-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--card-border);
+    transition: 0.3s;
+}
+.search-item:hover {
+    background: var(--orange);
+    color: white;
+}
+.search-item strong { display: block; font-size: 0.9rem; }
+.search-item small { font-size: 0.75rem; opacity: 0.7; }
+
+/* Custom Scrollbar for Search */
+.search-results-dropdown::-webkit-scrollbar { width: 6px; }
+.search-results-dropdown::-webkit-scrollbar-track { background: transparent; }
+.search-results-dropdown::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 10px; }
+
+/* Building Type Select Styling */
+select.calc-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    padding-left: 40px;
+}
+body.en select.calc-input {
+    background-position: right 15px center;
+    padding-right: 40px;
+    padding-left: 12px;
+}
