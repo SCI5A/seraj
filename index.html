@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السراج للتجهيزات الصناعية | Al-Seraj Industrial Equipment</title>
+    <title>السراج للحلول الصناعية | Al-Seraj Industrial Solutions</title>
     
     <!-- Meta Tags -->
-    <meta name="description" content="السراج للتجهيزات الصناعية - الوكيل المعتمد لشركة Asenware في اليمن. متخصصون في أنظمة الإنذار المبكر ومكافحة الحريق والتجهيزات الصناعية المتطورة.">
-    <meta name="keywords" content="السراج, تجهيزات صناعية, Asenware, اليمن, إنذار حريق, مكافحة حريق, أمن صناعي">
-    <meta property="og:title" content="السراج للتجهيزات الصناعية | وكيل Asenware في اليمن">
+    <meta name="description" content="السراج للحلول الصناعية - متخصصون في تنفيذ مشاريع مصانع الأدوية مفتاح باليد وفق معايير GMP و WHO و ISO. الوكيل المعتمد لشركة Asenware في اليمن.">
+    <meta name="keywords" content="السراج, مصانع أدوية, GMP, WHO, ISO, ستارفارما, اليمن, تجهيزات صناعية, Asenware, إنذار حريق">
+    <meta property="og:title" content="السراج للحلول الصناعية | خبراء إنشاء مصانع الأدوية في اليمن">
     <meta property="og:description" content="نؤمن مستقبلك بأحدث أنظمة الحماية ومكافحة الحريق العالمية.">
     <meta property="og:image" content="seraj-logo.png">
     
@@ -21,36 +21,57 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-badge {
+            background: var(--orange);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .standard-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+        }
+        .standard-item h4 { color: var(--orange); margin: 0; }
+    </style>
 </head>
 <body id="body">
-
     <!-- Preloader -->
     <div id="preloader">
         <img src="seraj-logo.png" alt="شعار السراج" class="loader-logo">
         <div class="loader-bar"></div>
     </div>
-
     <!-- Announcement Bar -->
     <div class="announcement-bar" id="announcement">
-        📢 عرض خاص: خصم 15% على عقود الصيانة الدورية لأنظمة Asenware - لفترة محدودة!
+        🚀 السراج للحلول الصناعية: فخورون بتنفيذ مشروع مصنع ستارفارما في صنعاء وفق أعلى المعايير العالمية.
     </div>
-
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="nav-logo">
             <img src="seraj-logo.png" alt="شعار السراج" class="nav-logo-img">
-            <div class="nav-logo-text" id="navLogoText">السراج <span>للتجهيزات</span></div>
+            <div class="nav-logo-text" id="navLogoText">السراج <span>للحلول الصناعية</span></div>
         </a>
         
         <ul class="nav-links">
             <li><a href="#home" class="lang-home">الرئيسية</a></li>
+            <li><a href="#pharma" class="lang-pharma">مصانع الأدوية</a></li>
+            <li><a href="#projects" class="lang-projects-nav">مشاريعنا في اليمن</a></li>
             <li><a href="#services" class="lang-services">خدماتنا</a></li>
             <li><a href="#products" class="lang-products">المنتجات</a></li>
-            <li><a href="#tools" class="lang-tools">الأدوات</a></li>
-            <li><a href="#downloads" class="lang-downloads">التحميلات</a></li>
             <li><a href="#contact" class="lang-contact">اتصل بنا</a></li>
         </ul>
-
         <div class="nav-controls">
             <button class="lang-btn" id="langToggle">English</button>
             <button class="theme-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
@@ -60,15 +81,11 @@
     <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-left">
-            <h1 id="heroTitle">نؤمن <span>مستقبلك</span> بأحدث أنظمة الحماية</h1>
-            <p id="heroDesc">السراج للتجهيزات الصناعية، الوكيل المعتمد لشركة Asenware العالمية في اليمن.</p>
-            <div class="search-container" style="margin-top: 30px; position: relative; max-width: 500px;">
-                <input type="text" id="productSearch" placeholder="ابحث عن منتج (مثال: كاشف دخان)..." class="checker-input" style="margin-bottom: 0; padding-right: 45px;">
-                <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                <div id="searchResults" class="search-results-dropdown"></div>
-            </div>
-            <div style="margin-top: 20px;">
-                <a href="#products" class="btn btn-primary lang-get-started">استعرض المنتجات</a>
+            <h1 id="heroTitle">حلول <span>متكاملة</span> لإنشاء مصانع الأدوية</h1>
+            <p id="heroDesc">تنفيذ مشاريع مصانع أدوية "مفتاح باليد" من التصميم إلى التشغيل، وفق معايير GMP و WHO و ISO العالمية.</p>
+            <div style="margin-top: 30px;">
+                <a href="#pharma" class="btn btn-primary lang-get-started">اكتشف خدماتنا الدوائية</a>
+                <a href="#projects" class="btn btn-secondary" style="margin-right: 10px;">مشروع ستارفارما</a>
             </div>
         </div>
         <div class="hero-visual" data-aos="zoom-in">
@@ -76,107 +93,94 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" style="background: var(--bg2);">
+    <!-- Pharma Section -->
+    <section id="pharma" style="background: var(--bg2);">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title"><span class="lang-products">أحدث المنتجات</span></h2>
-            <p>نقدم أحدث تقنيات Asenware العالمية لعام 2024-2025.</p>
+            <h2 class="section-title"><span class="lang-pharma">مشاريع مصانع الأدوية</span></h2>
+            <p>نقدم حلول "مفتاح باليد" (Turnkey) متكاملة تشمل كافة مراحل الإنشاء.</p>
         </div>
-        <div class="stats-grid" id="productsGrid">
-            <!-- سيتم ملؤه عبر JS -->
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up">
+                <i class="fas fa-drafting-compass" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
+                <h3>التصميم الهندسي</h3>
+                <p>تصميم المصانع وخطوط الإنتاج بما يتوافق مع تدفق العمليات (Process Flow) ومعايير الجودة.</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-truck-loading" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
+                <h3>التوريد والتركيب</h3>
+                <p>تجهيز المصانع بأحدث الماكينات والأنظمة التقنية من كبرى الشركات العالمية.</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-check-double" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
+                <h3>التشغيل والاعتماد</h3>
+                <p>الإشراف على بدء التشغيل وضمان مطابقة المصنع لمعايير GMP و WHO و ISO.</p>
+            </div>
+        </div>
+        <div class="standards-grid" style="max-width: 800px; margin: 40px auto 0;">
+            <div class="standard-item" data-aos="flip-up"><h4>GMP</h4><p>Good Manufacturing Practice</p></div>
+            <div class="standard-item" data-aos="flip-up" data-aos-delay="100"><h4>WHO</h4><p>World Health Organization</p></div>
+            <div class="standard-item" data-aos="flip-up" data-aos-delay="200"><h4>ISO</h4><p>International Standards</p></div>
+        </div>
+    </section>
+
+    <!-- Yemen Projects Section -->
+    <section id="projects">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title"><span>مشاريعنا في اليمن</span></h2>
+            <p>نفخر بكوننا الشريك التقني لأكبر المشاريع الصناعية في الجمهورية اليمنية.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card" style="grid-column: span 2; text-align: right; display: flex; align-items: center; gap: 30px;" data-aos="fade-right">
+                <div style="flex: 1;">
+                    <span class="project-badge">مشروع رائد</span>
+                    <h3>مصنع ستارفارما - صنعاء</h3>
+                    <p>تم تنفيذ المشروع بالكامل "مفتاح باليد"، بدءاً من التصاميم الهندسية وصولاً إلى تركيب خطوط الإنتاج وأنظمة الأمان الصناعي، ليكون أحد أحدث مصانع الأدوية في اليمن وفق معايير التصنيع الجيد (GMP).</p>
+                    <ul style="list-style: none; margin-top: 15px; padding: 0;">
+                        <li><i class="fas fa-check-circle" style="color: var(--orange);"></i> تركيب أنظمة إنذار حريق متطورة (Asenware).</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--orange);"></i> تجهيز غرف نظيفة (Clean Rooms) بمعايير دولية.</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--orange);"></i> دعم فني وصيانة مستمرة.</li>
+                    </ul>
+                </div>
+                <div style="width: 300px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-industry" style="font-size: 5rem; color: var(--orange); opacity: 0.3;"></i>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" style="background: var(--bg2);">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title"><span class="lang-services">خدماتنا</span></h2>
-            <p>نقدم حلولاً متكاملة في مجال الأمن والسلامة الصناعية.</p>
+            <h2 class="section-title"><span class="lang-services">خدماتنا الصناعية</span></h2>
+            <p>حلول شاملة للأمن والسلامة والتجهيزات الصناعية.</p>
         </div>
         <div class="stats-grid">
             <div class="stat-card" data-aos="fade-up">
                 <i class="fas fa-fire-extinguisher" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
                 <h3>أنظمة الحريق</h3>
-                <p>توريد وتركيب أحدث أنظمة إنذار ومكافحة الحريق.</p>
+                <p>توريد وتركيب أحدث أنظمة إنذار ومكافحة الحريق من Asenware.</p>
             </div>
             <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-tools" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
-                <h3>صيانة دورية</h3>
-                <p>عقود صيانة احترافية لضمان عمل الأنظمة بكفاءة.</p>
+                <h3>عقود الصيانة</h3>
+                <p>برامج صيانة دورية لضمان استمرارية عمل الأنظمة بكفاءة عالية.</p>
             </div>
             <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--orange); margin-bottom: 15px;"></i>
-                <h3>تدريب فني</h3>
-                <p>تدريب الكوادر على استخدام وصيانة أنظمة السلامة.</p>
+                <h3>التدريب والاستشارات</h3>
+                <p>تأهيل الكوادر الفنية وتقديم استشارات هندسية متخصصة.</p>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Tools -->
-    <section id="tools" style="background: var(--bg2);">
+    <!-- Products Section -->
+    <section id="products">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title"><span class="lang-smart-tools">الأدوات الذكية</span></h2>
-            <p class="lang-tools-desc">أدوات تفاعلية لمساعدتك في تأمين منشأتك والتأكد من جودة منتجاتك.</p>
+            <h2 class="section-title"><span class="lang-products">منتجات Asenware</span></h2>
+            <p>نحن الوكيل المعتمد لمنتجات Asenware العالمية في اليمن.</p>
         </div>
-        <div class="tools-grid">
-            <!-- Authenticity Checker -->
-            <div class="tool-card" data-aos="fade-up">
-                <h3 class="lang-check-title">التحقق من الأصالة</h3>
-                <p class="lang-check-desc" style="margin-bottom: 20px;">أدخل الرقم التسلسلي للمنتج للتأكد من أنه أصلي من وكالة السراج.</p>
-                <input type="text" class="checker-input" id="serialInput" placeholder="أدخل الرقم التسلسلي (مثال: AS-2024-XXXX)">
-                <button class="btn btn-primary w-full" onclick="checkSerial()">تحقق الآن</button>
-                <div id="checkResult" class="checker-result"></div>
-            </div>
-
-            <!-- Fire System Estimator -->
-            <div class="tool-card" data-aos="fade-up">
-                <h3 class="lang-calc-title">حاسبة الأنظمة التقديرية</h3>
-                <div class="calc-input-group">
-                    <label class="lang-area-label">مساحة المنشأة (متر مربع):</label>
-                    <input type="number" id="calcArea" class="calc-input" placeholder="مثال: 500">
-                </div>
-                <div class="calc-input-group">
-                    <label>نوع المنشأة:</label>
-                    <select id="buildingType" class="calc-input" style="background: rgba(255,255,255,0.05); color: white;">
-                        <option value="residential">سكنية (مخاطر منخفضة)</option>
-                        <option value="commercial">تجارية (مخاطر متوسطة)</option>
-                        <option value="industrial">صناعية (مخاطر عالية)</option>
-                    </select>
-                </div>
-                <button class="btn btn-secondary w-full" onclick="calculateSystem()">احسب الاحتياج</button>
-                <div id="calcResult" class="checker-result" style="background: rgba(26, 95, 168, 0.1); border: 1px solid var(--blue);"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Center -->
-    <section id="downloads">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title"><span class="lang-dl-center">مركز التحميلات</span></h2>
-            <p class="lang-dl-desc">حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا لعام 2025.</p>
-        </div>
-        <div class="downloads-grid">
-            <a href="https://www.asenwarefire.com/downloads/asenware-catalogue" target="_blank" class="download-item" data-aos="zoom-in">
-                <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
-                <div class="download-info">
-                    <h5>كتالوج Asenware 2025</h5>
-                    <p>PDF - أحدث إصدار</p>
-                </div>
-            </a>
-            <a href="https://www.asenwarefire.com/collections/addressable-fire-alarm-control-system-lpcb-approved" target="_blank" class="download-item" data-aos="zoom-in" data-aos-delay="100">
-                <div class="download-icon"><i class="fas fa-certificate"></i></div>
-                <div class="download-info">
-                    <h5>شهادات LPCB المحدثة</h5>
-                    <p>اعتمادات دولية 2024</p>
-                </div>
-            </a>
-            <a href="#" class="download-item" data-aos="zoom-in" data-aos-delay="200">
-                <div class="download-icon"><i class="fas fa-book"></i></div>
-                <div class="download-info">
-                    <h5>دليل التركيب اليمني</h5>
-                    <p>PDF - خاص بوكالة السراج</p>
-                </div>
-            </a>
+        <div class="stats-grid" id="productsGrid">
+            <!-- سيتم ملؤه عبر JS -->
         </div>
     </section>
 
@@ -210,7 +214,7 @@
     </a>
 
     <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--card-border);">
-        <p>© 2024-2026 <span class="lang-footer">السراج للتجهيزات الصناعية. جميع الحقوق محفوظة.</span></p>
+        <p>© 2024-2026 <span class="lang-footer">السراج للحلول الصناعية. جميع الحقوق محفوظة.</span></p>
     </footer>
 
     <!-- Scripts -->
