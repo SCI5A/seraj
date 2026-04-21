@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({ duration: 1000, once: true });
 
-    // Products Data
+    // Products Data (Kept as is for Asenware context)
     const products = [
         { id: 1, name: 'كاشف دخان لاسلكي', nameEn: 'Wireless Smoke Detector', category: 'Fire Alarm', model: 'AW-D101', desc: 'كاشف دخان ذكي يعمل بالبطارية مع اتصال لاسلكي.' },
         { id: 2, name: 'لوحة تحكم قابلة للعنونة', nameEn: 'Addressable Control Panel', category: 'Control Panels', model: 'AW-FP100', desc: 'لوحة تحكم متطورة تدعم حتى 250 نقطة عنونة.' },
@@ -22,40 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `).join('');
     }
-
-    // Search Logic
-    const productSearch = document.getElementById('productSearch');
-    const searchResults = document.getElementById('searchResults');
-    if (productSearch && searchResults) {
-        productSearch.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            if (query.length < 2) {
-                searchResults.style.display = 'none';
-                return;
-            }
-            const filtered = products.filter(p => 
-                p.name.toLowerCase().includes(query) || 
-                p.nameEn.toLowerCase().includes(query) || 
-                p.model.toLowerCase().includes(query)
-            );
-            if (filtered.length > 0) {
-                searchResults.innerHTML = filtered.map(p => `
-                    <div class="search-item" onclick="scrollToSection('products')">
-                        <strong>${p.name}</strong> <small>(${p.model})</small>
-                    </div>
-                `).join('');
-                searchResults.style.display = 'block';
-            } else {
-                searchResults.style.display = 'none';
-            }
-        });
-    }
-
-    window.scrollToSection = (id) => {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        if (searchResults) searchResults.style.display = 'none';
-        if (productSearch) productSearch.value = '';
-    };
 
     // Preloader
     const preloader = document.getElementById('preloader');
@@ -83,44 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
-            navLogo: 'Seraj <span>Equipment</span>',
-            home: 'Home', services: 'Services', products: 'Products', tools: 'Tools', downloads: 'Downloads', contact: 'Contact',
-            heroTitle: 'Secure Your <span>Future</span> With Advanced Systems',
-            heroDesc: 'Al-Seraj Industrial Equipment, Authorized Asenware Distributor in Yemen.',
-            smartTools: 'Smart Tools',
-            toolsDesc: 'Interactive tools to help you secure your facility and verify product quality.',
-            checkTitle: 'Authenticity Checker',
-            checkDesc: 'Enter the product serial number to verify it is an original Seraj product.',
-            verifyBtn: 'Verify Now',
-            calcTitle: 'System Estimator',
-            areaLabel: 'Facility Area (sqm):',
-            roomsLabel: 'Number of Rooms/Sections:',
-            calcBtn: 'Calculate Needs',
-            dlCenter: 'Download Center',
-            dlDesc: 'Download technical catalogs and international certifications for 2025.',
-            footer: 'Al-Seraj Industrial Equipment. All Rights Reserved.',
-            announcement: '📢 Special Offer: 15% discount on periodic maintenance for Asenware systems - Limited time!',
-            getStarted: 'Explore Products'
+            navLogo: 'Seraj <span>Industrial Solutions</span>',
+            home: 'Home', 
+            pharma: 'Pharma Factories',
+            projectsNav: 'Yemen Projects',
+            services: 'Services', 
+            products: 'Products', 
+            contact: 'Contact',
+            heroTitle: 'Integrated <span>Solutions</span> for Pharma Factories',
+            heroDesc: 'Executing Turnkey Pharma Projects from Design to Operation, following GMP, WHO, and ISO standards.',
+            footer: 'Al-Seraj Industrial Solutions. All rights reserved.',
+            announcement: '🚀 Al-Seraj Industrial Solutions: Proud to execute StarPharma project in Sana\'a with global standards.',
+            getStarted: 'Explore Pharma Services'
         },
         ar: {
-            navLogo: 'السراج <span>للتجهيزات</span>',
-            home: 'الرئيسية', services: 'خدماتنا', products: 'المنتجات', tools: 'الأدوات', downloads: 'التحميلات', contact: 'اتصل بنا',
-            heroTitle: 'نؤمن <span>مستقبلك</span> بأحدث أنظمة الحماية',
-            heroDesc: 'السراج للتجهيزات الصناعية، الوكيل المعتمد لشركة Asenware العالمية في اليمن.',
-            smartTools: 'الأدوات الذكية',
-            toolsDesc: 'أدوات تفاعلية لمساعدتك في تأمين منشأتك والتأكد من جودة منتجاتك.',
-            checkTitle: 'التحقق من الأصالة',
-            checkDesc: 'أدخل الرقم التسلسلي للمنتج للتأكد من أنه أصلي من وكالة السراج.',
-            verifyBtn: 'تحقق الآن',
-            calcTitle: 'حاسبة الأنظمة التقديرية',
-            areaLabel: 'مساحة المنشأة (متر مربع):',
-            roomsLabel: 'عدد الغرف/الأقسام:',
-            calcBtn: 'احسب الاحتياج',
-            dlCenter: 'مركز التحميلات',
-            dlDesc: 'حمل الكتالوجات الفنية وشهادات الاعتماد الدولية لمنتجاتنا لعام 2025.',
-            footer: 'السراج للتجهيزات الصناعية. جميع الحقوق محفوظة.',
-            announcement: '📢 عرض خاص: خصم 15% على عقود الصيانة الدورية لأنظمة Asenware - لفترة محدودة!',
-            getStarted: 'استعرض المنتجات'
+            navLogo: 'السراج <span>للحلول الصناعية</span>',
+            home: 'الرئيسية', 
+            pharma: 'مصانع الأدوية',
+            projectsNav: 'مشاريعنا في اليمن',
+            services: 'خدماتنا', 
+            products: 'المنتجات', 
+            contact: 'اتصل بنا',
+            heroTitle: 'حلول <span>متكاملة</span> لإنشاء مصانع الأدوية',
+            heroDesc: 'تنفيذ مشاريع مصانع أدوية "مفتاح باليد" من التصميم إلى التشغيل، وفق معايير GMP و WHO و ISO العالمية.',
+            footer: 'السراج للحلول الصناعية. جميع الحقوق محفوظة.',
+            announcement: '🚀 السراج للحلول الصناعية: فخورون بتنفيذ مشروع مصنع ستارفارما في صنعاء وفق أعلى المعايير العالمية.',
+            getStarted: 'اكتشف خدماتنا الدوائية'
         }
     };
 
@@ -142,21 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const selectors = {
             '.lang-home': t.home,
+            '.lang-pharma': t.pharma,
+            '.lang-projects-nav': t.projectsNav,
             '.lang-services': t.services,
             '.lang-products': t.products,
-            '.lang-tools': t.tools,
-            '.lang-downloads': t.downloads,
             '.lang-contact': t.contact,
-            '.lang-smart-tools': t.smartTools,
-            '.lang-tools-desc': t.toolsDesc,
-            '.lang-check-title': t.checkTitle,
-            '.lang-check-desc': t.checkDesc,
-            '.lang-calc-title': t.calcTitle,
-            '.lang-area-label': t.areaLabel,
-            '.lang-rooms-label': t.roomsLabel,
-            '.lang-calc-btn': t.calcBtn,
-            '.lang-dl-center': t.dlCenter,
-            '.lang-dl-desc': t.dlDesc,
             '.lang-footer': t.footer,
             '.lang-get-started': t.getStarted
         };
@@ -175,46 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const announcement = document.getElementById('announcement');
         if (announcement) announcement.innerText = t.announcement;
     }
-
-    // Serial Checker Logic
-    window.checkSerial = function() {
-        const input = document.getElementById('serialInput').value.trim();
-        const result = document.getElementById('checkResult');
-        if (!result) return;
-        result.style.display = 'block';
-        
-        if (input.startsWith('AS-2024') || input.startsWith('AS-2025')) {
-            result.innerHTML = currentLang === 'ar' ? '✅ منتج أصلي معتمد من السراج' : '✅ Original Certified Seraj Product';
-            result.style.background = 'rgba(37, 211, 102, 0.1)';
-            result.style.border = '1px solid #25d366';
-        } else {
-            result.innerHTML = currentLang === 'ar' ? '❌ الرقم غير صحيح أو المنتج غير مسجل' : '❌ Invalid Serial or Product Not Registered';
-            result.style.background = 'rgba(217, 79, 26, 0.1)';
-            result.style.border = '1px solid var(--orange)';
-        }
-    };
-
-    // System Calculator Logic
-    window.calculateSystem = function() {
-        const area = document.getElementById('calcArea').value;
-        const type = document.getElementById('buildingType').value;
-        const result = document.getElementById('calcResult');
-        if (!result) return;
-        
-        if (!area) return;
-        
-        let multiplier = 50; // Residential
-        if (type === 'commercial') multiplier = 40;
-        if (type === 'industrial') multiplier = 30;
-
-        const detectors = Math.ceil(area / multiplier);
-        const panels = 1;
-        
-        result.style.display = 'block';
-        result.innerHTML = currentLang === 'ar' 
-            ? `📊 الاحتياج التقديري (${type === 'residential' ? 'سكني' : type === 'commercial' ? 'تجاري' : 'صناعي'}): <br> - كواشف: ${detectors} <br> - لوحة تحكم: ${panels}`
-            : `📊 Estimated Needs (${type}): <br> - Detectors: ${detectors} <br> - Control Panel: ${panels}`;
-    };
 
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
