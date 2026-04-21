@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle: 'Integrated <span>Solutions</span> for Pharma Factories',
             heroDesc: 'Executing Turnkey Pharma Projects from Design to Operation, following GMP, WHO, and ISO standards.',
             footer: 'Al-Seraj Industrial Solutions Official. All rights reserved.',
-            announcement: '🚀 Al-Seraj Industrial Solutions: Proud to execute StarPharma project in Sana\'a with global standards.',
+            announcement: '🚀 Al-Seraj Industrial Solutions: Experts in establishing pharma factories in Yemen with global quality standards.',
             getStarted: 'Explore Pharma Services'
         },
         ar: {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle: 'حلول <span>متكاملة</span> لإنشاء مصانع الأدوية',
             heroDesc: 'تنفيذ مشاريع مصانع أدوية "مفتاح باليد" من التصميم إلى التشغيل، وفق معايير GMP و WHO و ISO العالمية.',
             footer: 'الموقع الرسمي لشركة السراج للحلول الصناعية. جميع الحقوق محفوظة.',
-            announcement: '🚀 السراج للحلول الصناعية: فخورون بتنفيذ مشروع مصنع ستارفارما في صنعاء وفق أعلى المعايير العالمية.',
+            announcement: '🚀 السراج للحلول الصناعية: خبراء إنشاء مصانع الأدوية في اليمن وفق معايير الجودة العالمية.',
             getStarted: 'اكتشف خدماتنا الدوائية'
         }
     };
